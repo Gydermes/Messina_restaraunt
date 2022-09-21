@@ -1,5 +1,6 @@
 from django.shortcuts import HttpResponse
 from django.shortcuts import render
+from .models import Menu
 
 
 def menu(request):
@@ -7,7 +8,12 @@ def menu(request):
 
 
 def first_course(request):
-    return HttpResponse('first_course')
+    course = Menu.objects.all()
+    res = []
+    for item in course:
+        res += f'{item.Food_classification} {item.name_of_dishes} {item.price} '
+
+    return HttpResponse(res)
 
 
 def second_course(request):
