@@ -1,6 +1,6 @@
 from django.shortcuts import HttpResponse
 from django.shortcuts import render
-from .models import Menu
+from .models import First_course, Second_course, Snacks, Garnish, Sweets, Beverages
 
 
 def menu(request):
@@ -8,29 +8,48 @@ def menu(request):
 
 
 def first_course(request):
-    course = Menu.objects.all()
+    course = First_course.objects.all()
     res = []
     for item in course:
-        res += f'{item.Food_classification} {item.name_of_dishes} {item.price} '
-
+        res += f' \n{item.name_of_dishes} "{item.price}\n"'
     return HttpResponse(res)
 
 
 def second_course(request):
-    return HttpResponse('second_course')
+    course = Second_course.objects.all()
+    res = []
+    for item in course:
+        res += f' {item.name_of_dishes} "{item.price}"'
+    return HttpResponse(res)
 
 
 def snacks(request):
-    return HttpResponse('snacks')
+    course = Snacks.objects.all()
+    res = []
+    for item in course:
+        res += f' {item.name_of_dishes} "{item.price}"'
+    return HttpResponse(res)
 
 
 def garnish(request):
-    return HttpResponse('garnish')
+    course = Garnish.objects.all()
+    res = []
+    for item in course:
+        res += f' {item.name_of_dishes} "{item.price}"'
+    return HttpResponse(res)
 
 
 def sweets(request):
-    return HttpResponse('sweets')
+    course = Sweets.objects.all()
+    res = []
+    for item in course:
+        res += f' {item.name_of_dishes} "{item.price}"'
+    return HttpResponse(res)
 
 
 def beverages(request):
-    return HttpResponse('beverages')
+    course = Beverages.objects.all()
+    res = []
+    for item in course:
+        res += f' {item.name_of_dishes} "{item.price}"'
+    return HttpResponse(res)

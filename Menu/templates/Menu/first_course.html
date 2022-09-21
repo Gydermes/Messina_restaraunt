@@ -5,6 +5,14 @@
     <title>first_course</title>
 </head>
 <body>
+
    <p>first_course</p>
+    <pre>def first_course(request):
+        course = First_course.objects.all()
+        res = []
+        for item in course:
+            res += f' {item.name_of_dishes} {item.price} '
+        return HttpResponse(res)
+    </pre>
 </body>
 </html>
