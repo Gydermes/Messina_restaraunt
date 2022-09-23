@@ -1,17 +1,20 @@
 body {
     color: red;
-    background-color:skyblue;
+    background-color: skyblue;
     background-size: cover;
 }
 
-/*img {*/
-/*    width: auto;*/
-/*}*/
+body header {
+    text-align: center;
+    font-size: 38px;
+    font-style: italic;
+    font-weight: bold;
+}
 
-/*.logo{*/
-/*    font-size: 40px;*/
-/*    margin-left: 10px;*/
-/*    font-weight: bold;*/
-/*    position: relative;*/
-/*    top: -5px;*/
+.logo {
+        font-size: 40px;
+        margin-left: 10px;
+        font-weight: bold;
+        position: relative;
+        top: -5px;
 }
